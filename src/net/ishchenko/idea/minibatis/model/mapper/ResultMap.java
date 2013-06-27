@@ -11,13 +11,14 @@ import com.intellij.util.xml.NameValue;
  * Date: 26.05.12
  * Time: 16:21
  */
-public interface ResultMap extends DomElement {
+public interface ResultMap extends DomElement
+{
 
-    @NameValue
-    @Attribute("id")
-    GenericAttributeValue<String> getId();
+	@NameValue
+	@Attribute("id")
+	GenericAttributeValue<String> getId();
 
-    @Attribute("extends")
-    GenericAttributeValue<ResultMap> getExtends();
+	@Attribute("extends")
+	GenericAttributeValue<ResultMap> getExtends();
 
 }

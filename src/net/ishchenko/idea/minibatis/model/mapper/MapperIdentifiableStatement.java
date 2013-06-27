@@ -11,10 +11,11 @@ import com.intellij.util.xml.NameValue;
  * Date: 23.12.11
  * Time: 23:43
  */
-public interface MapperIdentifiableStatement extends DomElement, WithIncludes {
+public interface MapperIdentifiableStatement extends DomElement, WithIncludes
+{
 
-    @NameValue
-    @Attribute("id")
-    GenericAttributeValue<String> getId();
+	@NameValue
+	@Attribute("id")
+	GenericAttributeValue<String> getId();
 
 }

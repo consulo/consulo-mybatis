@@ -1,8 +1,12 @@
 package net.ishchenko.idea.minibatis.model.mapper;
 
-import com.intellij.util.xml.*;
-
 import java.util.List;
+
+import com.intellij.util.xml.Attribute;
+import com.intellij.util.xml.DomElement;
+import com.intellij.util.xml.GenericAttributeValue;
+import com.intellij.util.xml.SubTagList;
+import com.intellij.util.xml.SubTagsList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,31 +15,38 @@ import java.util.List;
  * Time: 18:37
  */
 
-public interface Mapper extends DomElement {
+public interface Mapper extends DomElement
+{
 
-    @Attribute("namespace")
-    GenericAttributeValue<String> getNamespace();
+	@Attribute("namespace")
+	GenericAttributeValue<String> getNamespace();
 
-    @SubTagsList({"sql", "select", "insert", "update", "delete"})
-    List<MapperIdentifiableStatement> getIdentifiableStatements();
+	@SubTagsList({
+			"sql",
+			"select",
+			"insert",
+			"update",
+			"delete"
+	})
+	List<MapperIdentifiableStatement> getIdentifiableStatements();
 
-    @SubTagList("resultMap")
-    List<ResultMap> getResultMaps();
-    
-    @SubTagList("sql")
-    List<MapperIdentifiableStatement> getSqls();
+	@SubTagList("resultMap")
+	List<ResultMap> getResultMaps();
 
-    @SubTagList("select")
-    List<Select> getSelects();
+	@SubTagList("sql")
+	List<MapperIdentifiableStatement> getSqls();
 
-    @SubTagList("insert")
-    List<Insert> getInserts();
+	@SubTagList("select")
+	List<Select> getSelects();
 
-    @SubTagList("update")
-    List<Update> getUpdates();
+	@SubTagList("insert")
+	List<Insert> getInserts();
 
-    @SubTagList("delete")
-    List<Delete> getDeletes();
+	@SubTagList("update")
+	List<Update> getUpdates();
+
+	@SubTagList("delete")
+	List<Delete> getDeletes();
 
 
 }

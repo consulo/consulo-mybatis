@@ -6,6 +6,7 @@ package net.ishchenko.idea.minibatis.model.mapper;
  * Date: 26.05.12
  * Time: 15:50
  */
-public interface Select extends MapperIdentifiableStatement, WithResultMap {
+public interface Select extends MapperIdentifiableStatement, WithResultMap
+{
 
 }

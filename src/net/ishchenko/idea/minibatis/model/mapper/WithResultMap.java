@@ -10,9 +10,10 @@ import com.intellij.util.xml.GenericAttributeValue;
  * Date: 26.05.12
  * Time: 16:20
  */
-public interface WithResultMap extends DomElement {
+public interface WithResultMap extends DomElement
+{
 
-    @Attribute("resultMap")
-    GenericAttributeValue<ResultMap> getResultMap();
+	@Attribute("resultMap")
+	GenericAttributeValue<ResultMap> getResultMap();
 
 }

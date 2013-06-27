@@ -6,5 +6,6 @@ package net.ishchenko.idea.minibatis.model.sqlmap;
  * Date: 02.01.12
  * Time: 21:55
  */
-public interface Procedure extends SqlMapIdentifiableStatement, ResultProvider {
+public interface Procedure extends SqlMapIdentifiableStatement, ResultProvider
+{
 }

@@ -10,9 +10,10 @@ import com.intellij.util.xml.GenericAttributeValue;
  * Date: 02.03.12
  * Time: 21:58
  */
-public interface SelectKey extends DomElement {
+public interface SelectKey extends DomElement
+{
 
-    @Attribute("resultClass")
-    GenericAttributeValue<TypeAlias> getResultClass();
+	@Attribute("resultClass")
+	GenericAttributeValue<TypeAlias> getResultClass();
 
 }

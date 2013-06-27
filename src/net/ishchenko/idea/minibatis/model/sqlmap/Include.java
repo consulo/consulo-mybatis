@@ -11,10 +11,11 @@ import com.intellij.util.xml.NameValue;
  * Date: 02.01.12
  * Time: 20:40
  */
-public interface Include extends DomElement {
+public interface Include extends DomElement
+{
 
-    @NameValue
-    @Attribute("refid")
-    GenericAttributeValue<SqlMapIdentifiableStatement> getRefid();
+	@NameValue
+	@Attribute("refid")
+	GenericAttributeValue<SqlMapIdentifiableStatement> getRefid();
 
 }

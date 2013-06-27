@@ -10,9 +10,10 @@ import com.intellij.util.xml.GenericAttributeValue;
  * Date: 26.05.12
  * Time: 15:59
  */
-public interface Include extends DomElement {
+public interface Include extends DomElement
+{
 
-    @Attribute("refid")
-    GenericAttributeValue<MapperIdentifiableStatement> getRefid();
+	@Attribute("refid")
+	GenericAttributeValue<MapperIdentifiableStatement> getRefid();
 
 }
