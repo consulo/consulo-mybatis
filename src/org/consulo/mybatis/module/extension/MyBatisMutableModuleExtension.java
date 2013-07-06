@@ -21,6 +21,7 @@ public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implem
 	{
 		super(id, module);
 		myModuleExtension = moduleExtension;
+		commit(myModuleExtension);
 	}
 
 	@Nullable
