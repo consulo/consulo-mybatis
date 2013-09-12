@@ -1,12 +1,12 @@
 package org.consulo.mybatis.module.extension;
 
-import javax.swing.JComponent;
-
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModifiableRootModel;
 import org.consulo.module.extension.MutableModuleExtension;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.ModifiableRootModel;
+
+import javax.swing.*;
 
 /**
  * @author VISTALL
@@ -21,7 +21,6 @@ public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implem
 	{
 		super(id, module);
 		myModuleExtension = moduleExtension;
-		commit(myModuleExtension);
 	}
 
 	@Nullable
