@@ -30,13 +30,6 @@ public class MyBatisModuleExtensionProvider implements ModuleExtensionProvider<M
 
 	@NotNull
 	@Override
-	public Class<MyBatisModuleExtension> getImmutableClass()
-	{
-		return MyBatisModuleExtension.class;
-	}
-
-	@NotNull
-	@Override
 	public MyBatisModuleExtension createImmutable(@NotNull String s, @NotNull Module module)
 	{
 		return new MyBatisModuleExtension(s, module);

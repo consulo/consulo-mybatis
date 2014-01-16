@@ -3,3 +3,4 @@
 *.iml
 *.jar
 /.consulo/workspace.xml
+/dep

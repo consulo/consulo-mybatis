@@ -1,12 +1,13 @@
 <idea-plugin version="2">
 	<id>idea-mini-ibatis</id>
 	<name>iBATIS/MyBatis mini-plugin</name>
-	<version>1.12</version>
+	<version>SNAPSHOT</version>
 	<vendor>Max Ishchenko</vendor>
 	<depends>org.consulo.java</depends>
 	<depends>com.intellij.xml</depends>
 
 	<extensions defaultExtensionNs="com.intellij">
+		<errorHandler implementation="com.intellij.diagnostic.ITNReporter" />
 		<moduleExtensionProvider key="mybatis" parent-key="java" implementationClass="org.consulo.mybatis.module.extension.MyBatisModuleExtensionProvider" />
 		<psi.referenceContributor implementation="net.ishchenko.idea.minibatis.MyBatisReferenceContributor"/>
 		<codeInsight.lineMarkerProvider language="JAVA" implementationClass="net.ishchenko.idea.minibatis.MyBatis3ProxiesLineMarkerProvider"/>
