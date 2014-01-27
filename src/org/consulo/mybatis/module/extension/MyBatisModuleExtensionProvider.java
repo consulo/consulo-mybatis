@@ -37,8 +37,8 @@ public class MyBatisModuleExtensionProvider implements ModuleExtensionProvider<M
 
 	@NotNull
 	@Override
-	public MyBatisMutableModuleExtension createMutable(@NotNull String s, @NotNull Module module, @NotNull MyBatisModuleExtension moduleExtension)
+	public MyBatisMutableModuleExtension createMutable(@NotNull String s, @NotNull Module module)
 	{
-		return new MyBatisMutableModuleExtension(s, module, moduleExtension);
+		return new MyBatisMutableModuleExtension(s, module);
 	}
 }

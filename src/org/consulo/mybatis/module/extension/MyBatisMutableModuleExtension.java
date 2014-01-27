@@ -1,12 +1,12 @@
 package org.consulo.mybatis.module.extension;
 
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.ModifiableRootModel;
+import javax.swing.JComponent;
+
 import org.consulo.module.extension.MutableModuleExtension;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModifiableRootModel;
 
 /**
  * @author VISTALL
@@ -14,13 +14,9 @@ import javax.swing.*;
  */
 public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implements MutableModuleExtension<MyBatisModuleExtension>
 {
-	@NotNull
-	private final MyBatisModuleExtension myModuleExtension;
-
-	public MyBatisMutableModuleExtension(@NotNull String id, @NotNull Module module, @NotNull MyBatisModuleExtension moduleExtension)
+	public MyBatisMutableModuleExtension(@NotNull String id, @NotNull Module module)
 	{
 		super(id, module);
-		myModuleExtension = moduleExtension;
 	}
 
 	@Nullable
@@ -37,14 +33,8 @@ public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implem
 	}
 
 	@Override
-	public boolean isModified()
+	public boolean isModified(@NotNull MyBatisModuleExtension extension)
 	{
-		return myIsEnabled != myModuleExtension.isEnabled();
-	}
-
-	@Override
-	public void commit()
-	{
-		myModuleExtension.commit(this);
+		return myIsEnabled != extension.isEnabled();
 	}
 }
