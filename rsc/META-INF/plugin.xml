@@ -8,7 +8,12 @@
 
 	<extensions defaultExtensionNs="com.intellij">
 		<errorHandler implementation="com.intellij.diagnostic.ITNReporter" />
-		<moduleExtensionProvider key="mybatis" parent-key="java" implementationClass="org.consulo.mybatis.module.extension.MyBatisModuleExtensionProvider" />
+		<moduleExtensionProvider key="mybatis"
+								 parentKey="java"
+								 icon="/org/consulo/mybatis/icons/mybatis.png"
+								 name="iBatis/MyBatis"
+								 immutableClass="org.consulo.mybatis.module.extension.MyBatisModuleExtension"
+								 mutableClass="org.consulo.mybatis.module.extension.MyBatisMutableModuleExtension" />
 		<psi.referenceContributor implementation="net.ishchenko.idea.minibatis.MyBatisReferenceContributor"/>
 		<codeInsight.lineMarkerProvider language="JAVA" implementationClass="net.ishchenko.idea.minibatis.MyBatis3ProxiesLineMarkerProvider"/>
 		<definitionsSearch implementation="net.ishchenko.idea.minibatis.MyBatis3ProxiesDefinitionsSearcher"/>

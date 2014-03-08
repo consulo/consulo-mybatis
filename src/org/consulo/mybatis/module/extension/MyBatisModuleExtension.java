@@ -2,7 +2,7 @@ package org.consulo.mybatis.module.extension;
 
 import org.consulo.module.extension.impl.ModuleExtensionImpl;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModifiableRootModel;
 
 /**
  * @author VISTALL
@@ -10,8 +10,8 @@ import com.intellij.openapi.module.Module;
  */
 public class MyBatisModuleExtension extends ModuleExtensionImpl<MyBatisModuleExtension>
 {
-	public MyBatisModuleExtension(@NotNull String id, @NotNull Module module)
+	public MyBatisModuleExtension(@NotNull String id, @NotNull ModifiableRootModel rootModel)
 	{
-		super(id, module);
+		super(id, rootModel);
 	}
 }
