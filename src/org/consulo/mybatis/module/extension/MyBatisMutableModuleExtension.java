@@ -5,7 +5,7 @@ import javax.swing.JComponent;
 import org.consulo.module.extension.MutableModuleExtension;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootLayer;
 
 /**
  * @author VISTALL
@@ -13,9 +13,9 @@ import com.intellij.openapi.roots.ModifiableRootModel;
  */
 public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implements MutableModuleExtension<MyBatisModuleExtension>
 {
-	public MyBatisMutableModuleExtension(@NotNull String id, @NotNull ModifiableRootModel rootModel)
+	public MyBatisMutableModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
 	{
-		super(id, rootModel);
+		super(id, moduleRootLayer);
 	}
 
 	@Nullable
