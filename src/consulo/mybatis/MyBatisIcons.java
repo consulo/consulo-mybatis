@@ -1,4 +1,4 @@
-package org.consulo.mybatis;
+package consulo.mybatis;
 
 import javax.swing.Icon;
 
@@ -10,5 +10,5 @@ import com.intellij.openapi.util.IconLoader;
  */
 public interface MyBatisIcons
 {
-	Icon MyBatis = IconLoader.findIcon("/org/consulo/mybatis/icons/mybatis.png");
+	Icon MyBatis = IconLoader.findIcon("/consulo/mybatis/icons/mybatis.png");
 }

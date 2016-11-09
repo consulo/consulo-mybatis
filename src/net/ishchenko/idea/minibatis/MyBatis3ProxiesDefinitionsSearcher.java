@@ -18,11 +18,9 @@ import com.intellij.util.xml.DomElement;
  */
 public class MyBatis3ProxiesDefinitionsSearcher extends QueryExecutorBase<XmlElement, PsiElement>
 {
-
 	@Override
 	public void processQuery(@NotNull PsiElement element, @NotNull final Processor<XmlElement> consumer)
 	{
-
 		DomFileElementsFinder finder = ServiceManager.getService(element.getProject(), DomFileElementsFinder.class);
 		Processor<DomElement> processor = new Processor<DomElement>()
 		{
@@ -41,7 +39,5 @@ public class MyBatis3ProxiesDefinitionsSearcher extends QueryExecutorBase<XmlEle
 		{
 			finder.processMapperStatements((PsiMethod) element, processor);
 		}
-
 	}
-
 }

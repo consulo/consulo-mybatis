@@ -1,11 +1,8 @@
-package org.consulo.mybatis.module.extension;
+package consulo.mybatis.module.extension;
 
-import javax.swing.JComponent;
-
-import org.consulo.module.extension.MutableModuleExtension;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.roots.ModuleRootLayer;
+import consulo.module.extension.MutableModuleExtension;
+import consulo.roots.ModuleRootLayer;
 
 /**
  * @author VISTALL
@@ -16,13 +13,6 @@ public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implem
 	public MyBatisMutableModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
-	}
-
-	@Nullable
-	@Override
-	public JComponent createConfigurablePanel(@Nullable Runnable runnable)
-	{
-		return null;
 	}
 
 	@Override
