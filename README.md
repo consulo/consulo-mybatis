@@ -1,1 +1,1 @@
-![Build Status](http://must-be.org/vulcan/statusImage?name=consulo-mybatis)
+[![Build Status](https://ci.consulo.io/job/consulo-mybatis/badge/icon)](https://ci.consulo.io/job/consulo-mybatis/)
