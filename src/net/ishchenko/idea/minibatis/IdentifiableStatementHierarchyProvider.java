@@ -11,9 +11,9 @@ import com.intellij.ide.hierarchy.HierarchyBrowser;
 import com.intellij.ide.hierarchy.HierarchyProvider;
 import com.intellij.ide.hierarchy.call.JavaCallHierarchyProvider;
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.pom.PomTarget;
@@ -34,7 +34,6 @@ import com.intellij.util.xml.DomTarget;
  */
 public class IdentifiableStatementHierarchyProvider implements HierarchyProvider
 {
-
 	private HierarchyProvider delegate = new JavaCallHierarchyProvider();
 
 	@Nullable
@@ -42,14 +41,14 @@ public class IdentifiableStatementHierarchyProvider implements HierarchyProvider
 	public PsiElement getTarget(@NotNull DataContext dataContext)
 	{
 
-		final Project project = PlatformDataKeys.PROJECT.getData(dataContext);
+		final Project project = dataContext.getData(CommonDataKeys.PROJECT);
 		if(project == null)
 			return null;
 
-		Editor editor = LangDataKeys.EDITOR.getData(dataContext);
+		Editor editor = dataContext.getData(LangDataKeys.EDITOR);
 		assert editor != null;
 
-		PsiElement psiElement = LangDataKeys.PSI_ELEMENT.getData(dataContext);
+		PsiElement psiElement = dataContext.getData(LangDataKeys.PSI_ELEMENT);
 		if(!isIdentifiableStatement(psiElement))
 		{
 			return null;
