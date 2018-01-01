@@ -73,11 +73,9 @@ public class IdentifiableStatementReference extends PsiPolyVariantReferenceBase<
 	@NotNull
 	public Object[] getVariants()
 	{
-
 		CommonProcessors.CollectProcessor<String> processor = new CommonProcessors.CollectProcessor<String>();
 		ServiceManager.getService(getElement().getProject(), DomFileElementsFinder.class).processSqlMapStatementNames(processor);
 		return processor.toArray(new String[processor.getResults().size()]);
-
 	}
 
 	private String tryComputeConcatenatedValue()

@@ -1,8 +1,6 @@
 package net.ishchenko.idea.minibatis;
 
 import java.awt.event.MouseEvent;
-import java.util.Collection;
-import java.util.List;
 
 import javax.swing.Icon;
 
@@ -64,12 +62,6 @@ public class MyBatis3ProxiesLineMarkerProvider implements LineMarkerProvider
 		}
 
 		return null;
-
-	}
-
-	@Override
-	public void collectSlowLineMarkers(List<PsiElement> elements, Collection<LineMarkerInfo> result)
-	{
 
 	}
 

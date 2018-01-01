@@ -88,5 +88,4 @@ public class ResultMapReference extends PsiReferenceBase<PsiElement>
 		ServiceManager.getService(getElement().getProject(), DomFileElementsFinder.class).processResultMapNames(processor);
 		return processor.toArray(new String[processor.getResults().size()]);
 	}
-
 }
