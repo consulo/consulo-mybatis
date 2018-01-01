@@ -1,7 +1,4 @@
-/.idea
+/.consulo
+!/.consulo/codeStyleSettings.xml
 /out
-*.iml
-*.jar
-/.consulo/workspace.xml
-/dep
-/.consulo/sandbox
+/target
