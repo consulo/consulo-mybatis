@@ -2,15 +2,13 @@ package net.ishchenko.idea.minibatis;
 
 import java.awt.event.MouseEvent;
 
-import javax.swing.Icon;
-
 import com.intellij.codeHighlighting.Pass;
 import com.intellij.codeInsight.daemon.GutterIconNavigationHandler;
 import com.intellij.codeInsight.daemon.LineMarkerInfo;
 import com.intellij.codeInsight.daemon.LineMarkerProvider;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.markup.GutterIconRenderer;
-import com.intellij.openapi.util.IconLoader;
 import com.intellij.pom.Navigatable;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
@@ -31,9 +29,6 @@ import com.intellij.util.xml.DomElement;
  */
 public class MyBatis3ProxiesLineMarkerProvider implements LineMarkerProvider
 {
-
-	private static final Icon navigateToDeclarationIcon = IconLoader.getIcon("/gutter/implementedMethod.png");
-
 	@Override
 	public LineMarkerInfo getLineMarkerInfo(PsiElement element)
 	{
@@ -56,8 +51,8 @@ public class MyBatis3ProxiesLineMarkerProvider implements LineMarkerProvider
 			PsiElement nameIdentifier = ((PsiNameIdentifierOwner) element).getNameIdentifier();
 			if(processor.isFound() && nameIdentifier != null)
 			{
-				return new LineMarkerInfo<PsiIdentifier>((PsiIdentifier) nameIdentifier, //we just know it, ok
-						nameIdentifier.getTextRange(), navigateToDeclarationIcon, Pass.UPDATE_ALL, getTooltipProvider(processor.getFoundValue()), getNavigationHandler(processor.getFoundValue().getXmlElement()), GutterIconRenderer.Alignment.CENTER);
+				return new LineMarkerInfo<>((PsiIdentifier) nameIdentifier,
+						nameIdentifier.getTextRange(), AllIcons.Gutter.ImplementedMethod, Pass.UPDATE_ALL, getTooltipProvider(processor.getFoundValue()), getNavigationHandler(processor.getFoundValue().getXmlElement()), GutterIconRenderer.Alignment.CENTER);
 			}
 		}
 
