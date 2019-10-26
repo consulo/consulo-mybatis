@@ -19,7 +19,7 @@ import com.intellij.util.xml.DomElement;
 public class MyBatis3ProxiesDefinitionsSearcher extends QueryExecutorBase<XmlElement, PsiElement>
 {
 	@Override
-	public void processQuery(@NotNull PsiElement element, @NotNull final Processor<XmlElement> consumer)
+	public void processQuery(@NotNull PsiElement element, @NotNull final Processor<? super XmlElement> consumer)
 	{
 		DomFileElementsFinder finder = ServiceManager.getService(element.getProject(), DomFileElementsFinder.class);
 		Processor<DomElement> processor = new Processor<DomElement>()

@@ -1,4 +1,4 @@
-<idea-plugin>
+<consulo-plugin>
 	<id>consulo.mybatis</id>
 	<name>iBATIS/MyBatis</name>
 	<version>SNAPSHOT</version>
@@ -27,4 +27,4 @@
 		<fileDescription implementation="net.ishchenko.idea.minibatis.SqlMapDescription"/>
 		<fileDescription implementation="net.ishchenko.idea.minibatis.MapperDescription"/>
 	</extensions>
-</idea-plugin>
+</consulo-plugin>
