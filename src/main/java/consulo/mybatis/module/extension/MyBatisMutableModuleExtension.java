@@ -1,8 +1,13 @@
 package consulo.mybatis.module.extension;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import consulo.disposer.Disposable;
 import consulo.module.extension.MutableModuleExtension;
 import consulo.roots.ModuleRootLayer;
+import consulo.ui.Component;
+import consulo.ui.annotation.RequiredUIAccess;
 
 /**
  * @author VISTALL
@@ -10,9 +15,17 @@ import consulo.roots.ModuleRootLayer;
  */
 public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implements MutableModuleExtension<MyBatisModuleExtension>
 {
-	public MyBatisMutableModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
+	public MyBatisMutableModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
+	}
+
+	@RequiredUIAccess
+	@Nullable
+	@Override
+	public Component createConfigurationComponent(@Nonnull Disposable disposable, @Nonnull Runnable runnable)
+	{
+		return null;
 	}
 
 	@Override
@@ -22,7 +35,7 @@ public class MyBatisMutableModuleExtension extends MyBatisModuleExtension implem
 	}
 
 	@Override
-	public boolean isModified(@NotNull MyBatisModuleExtension extension)
+	public boolean isModified(@Nonnull MyBatisModuleExtension extension)
 	{
 		return myIsEnabled != extension.isEnabled();
 	}

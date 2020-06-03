@@ -1,6 +1,7 @@
 package net.ishchenko.idea.minibatis;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.psi.PsiClass;
@@ -19,7 +20,7 @@ import com.intellij.util.xml.DomElement;
 public class MyBatis3ProxiesDefinitionsSearcher extends QueryExecutorBase<XmlElement, PsiElement>
 {
 	@Override
-	public void processQuery(@NotNull PsiElement element, @NotNull final Processor<? super XmlElement> consumer)
+	public void processQuery(@Nonnull PsiElement element, @Nonnull final Processor<? super XmlElement> consumer)
 	{
 		DomFileElementsFinder finder = ServiceManager.getService(element.getProject(), DomFileElementsFinder.class);
 		Processor<DomElement> processor = new Processor<DomElement>()

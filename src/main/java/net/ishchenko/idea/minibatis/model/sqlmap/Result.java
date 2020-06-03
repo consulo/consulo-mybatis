@@ -1,8 +1,9 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
+import javax.annotation.Nonnull;
+
 import net.ishchenko.idea.minibatis.ResultMapReference;
 
-import org.jetbrains.annotations.NotNull;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.xml.Attribute;
@@ -37,7 +38,7 @@ public interface Result extends DomElement
 	class ResultMapReferenceConverter implements CustomReferenceConverter
 	{
 
-		@NotNull
+		@Nonnull
 		@Override
 		public PsiReference[] createReferences(GenericDomValue genericDomValue, PsiElement element, ConvertContext context)
 		{

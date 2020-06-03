@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementResolveResult;
@@ -41,7 +41,7 @@ public class IdentifiableStatementReference extends PsiPolyVariantReferenceBase<
 		super(expression);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public ResolveResult[] multiResolve(boolean b)
 	{
@@ -70,7 +70,7 @@ public class IdentifiableStatementReference extends PsiPolyVariantReferenceBase<
 
 	}
 
-	@NotNull
+	@Nonnull
 	public Object[] getVariants()
 	{
 		CommonProcessors.CollectProcessor<String> processor = new CommonProcessors.CollectProcessor<String>();

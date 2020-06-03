@@ -1,9 +1,10 @@
 package net.ishchenko.idea.minibatis;
 
+import javax.annotation.Nullable;
+
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import org.jetbrains.annotations.Nullable;
 import com.intellij.ide.actions.QualifiedNameProvider;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;

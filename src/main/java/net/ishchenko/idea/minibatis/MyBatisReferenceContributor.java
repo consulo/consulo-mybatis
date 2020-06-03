@@ -1,6 +1,7 @@
 package net.ishchenko.idea.minibatis;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.patterns.PsiJavaPatterns;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiLiteral;
@@ -25,8 +26,8 @@ public class MyBatisReferenceContributor extends PsiReferenceContributor
 
 		registrar.registerReferenceProvider(PsiJavaPatterns.psiLiteral(), new PsiReferenceProvider()
 		{
-			@NotNull
-			public PsiReference[] getReferencesByElement(@NotNull PsiElement element, @NotNull ProcessingContext context)
+			@Nonnull
+			public PsiReference[] getReferencesByElement(@Nonnull PsiElement element, @Nonnull ProcessingContext context)
 			{
 				return new PsiReference[]{
 						new IdentifiableStatementReference((PsiLiteral) element),

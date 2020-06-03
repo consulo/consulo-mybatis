@@ -1,6 +1,6 @@
 package consulo.mybatis.module.extension;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import consulo.module.extension.impl.ModuleExtensionImpl;
 import consulo.roots.ModuleRootLayer;
 
@@ -10,7 +10,7 @@ import consulo.roots.ModuleRootLayer;
  */
 public class MyBatisModuleExtension extends ModuleExtensionImpl<MyBatisModuleExtension>
 {
-	public MyBatisModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
+	public MyBatisModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
 	}

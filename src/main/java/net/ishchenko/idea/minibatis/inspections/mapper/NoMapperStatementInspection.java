@@ -1,9 +1,10 @@
 package net.ishchenko.idea.minibatis.inspections.mapper;
 
+import javax.annotation.Nonnull;
+
 import net.ishchenko.idea.minibatis.DomFileElementsFinder;
 
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.codeInspection.InspectionManager;
 import com.intellij.codeInspection.LocalQuickFix;
 import com.intellij.codeInspection.ProblemDescriptor;
@@ -24,7 +25,7 @@ public class NoMapperStatementInspection extends MyBatisInspection
 {
 
 	@Override
-	public ProblemDescriptor[] checkMethod(@NotNull PsiMethod method, @NotNull InspectionManager manager, boolean isOnTheFly)
+	public ProblemDescriptor[] checkMethod(@Nonnull PsiMethod method, @Nonnull InspectionManager manager, boolean isOnTheFly)
 	{
 		PsiClass containingClass = method.getContainingClass();
 		if(containingClass != null && containingClass.isInterface())
@@ -56,7 +57,7 @@ public class NoMapperStatementInspection extends MyBatisInspection
 	}
 
 	@Nls
-	@NotNull
+	@Nonnull
 	@Override
 	public String getDisplayName()
 	{

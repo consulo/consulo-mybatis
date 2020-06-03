@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import net.ishchenko.idea.minibatis.model.sqlmap.ResultMap;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReferenceBase;
@@ -24,7 +24,7 @@ public class ResultMapReference extends PsiReferenceBase<PsiElement>
 
 	private static final Pattern dotPattern = Pattern.compile("\\.");
 
-	public ResultMapReference(@NotNull PsiElement element)
+	public ResultMapReference(@Nonnull PsiElement element)
 	{
 		super(element);
 	}
@@ -80,7 +80,7 @@ public class ResultMapReference extends PsiReferenceBase<PsiElement>
 
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public Object[] getVariants()
 	{

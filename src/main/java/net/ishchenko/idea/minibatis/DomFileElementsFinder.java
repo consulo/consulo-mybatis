@@ -2,13 +2,14 @@ package net.ishchenko.idea.minibatis;
 
 import java.util.List;
 
+import javax.annotation.Nonnull;
+
 import net.ishchenko.idea.minibatis.model.mapper.Mapper;
 import net.ishchenko.idea.minibatis.model.mapper.MapperIdentifiableStatement;
 import net.ishchenko.idea.minibatis.model.sqlmap.ResultMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
@@ -41,7 +42,7 @@ public class DomFileElementsFinder
 		this.application = application;
 	}
 
-	public void processSqlMapStatements(@NotNull String targetNamespace, @NotNull String targetId, @NotNull Processor<? super SqlMapIdentifiableStatement> processor)
+	public void processSqlMapStatements(@Nonnull String targetNamespace, @Nonnull String targetId, @Nonnull Processor<? super SqlMapIdentifiableStatement> processor)
 	{
 
 		nsloop:
@@ -67,7 +68,7 @@ public class DomFileElementsFinder
 
 	}
 
-	public void processSqlMapStatementNames(@NotNull Processor<String> processor)
+	public void processSqlMapStatementNames(@Nonnull Processor<String> processor)
 	{
 
 		for(DomFileElement<SqlMap> fileElement : findSqlMapFileElements())
@@ -86,7 +87,7 @@ public class DomFileElementsFinder
 
 	}
 
-	public void processSqlMaps(@NotNull String targetNamespace, @NotNull Processor<? super SqlMap> processor)
+	public void processSqlMaps(@Nonnull String targetNamespace, @Nonnull Processor<? super SqlMap> processor)
 	{
 
 		for(DomFileElement<SqlMap> fileElement : findSqlMapFileElements())
@@ -117,7 +118,7 @@ public class DomFileElementsFinder
 		}
 	}
 
-	public void processResultMaps(@NotNull String targetNamespace, @NotNull String targetId, @NotNull Processor<? super ResultMap> processor)
+	public void processResultMaps(@Nonnull String targetNamespace, @Nonnull String targetId, @Nonnull Processor<? super ResultMap> processor)
 	{
 
 		nsloop:
@@ -144,7 +145,7 @@ public class DomFileElementsFinder
 
 	}
 
-	public void processResultMapNames(@NotNull Processor<String> processor)
+	public void processResultMapNames(@Nonnull Processor<String> processor)
 	{
 
 		for(DomFileElement<SqlMap> fileElement : findSqlMapFileElements())
@@ -163,7 +164,7 @@ public class DomFileElementsFinder
 
 	}
 
-	public void processMappers(@NotNull final PsiClass clazz, @NotNull final Processor<? super Mapper> processor)
+	public void processMappers(@Nonnull final PsiClass clazz, @Nonnull final Processor<? super Mapper> processor)
 	{
 		application.runReadAction(new Runnable()
 		{
@@ -183,7 +184,7 @@ public class DomFileElementsFinder
 		});
 	}
 
-	public void processMapperStatements(@NotNull final PsiMethod method, @NotNull final Processor<? super MapperIdentifiableStatement> processor)
+	public void processMapperStatements(@Nonnull final PsiMethod method, @Nonnull final Processor<? super MapperIdentifiableStatement> processor)
 	{
 
 		application.runReadAction(new Runnable()

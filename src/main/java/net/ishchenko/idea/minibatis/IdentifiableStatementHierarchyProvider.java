@@ -2,10 +2,12 @@ package net.ishchenko.idea.minibatis;
 
 import java.util.Collection;
 
+import javax.annotation.Nonnull;
+
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
+
 import com.intellij.codeInsight.hint.HintManager;
 import com.intellij.ide.hierarchy.HierarchyBrowser;
 import com.intellij.ide.hierarchy.HierarchyProvider;
@@ -38,7 +40,7 @@ public class IdentifiableStatementHierarchyProvider implements HierarchyProvider
 
 	@Nullable
 	@Override
-	public PsiElement getTarget(@NotNull DataContext dataContext)
+	public PsiElement getTarget(@Nonnull DataContext dataContext)
 	{
 
 		final Project project = dataContext.getData(CommonDataKeys.PROJECT);
@@ -77,7 +79,7 @@ public class IdentifiableStatementHierarchyProvider implements HierarchyProvider
 
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public HierarchyBrowser createHierarchyBrowser(PsiElement target)
 	{
@@ -89,7 +91,7 @@ public class IdentifiableStatementHierarchyProvider implements HierarchyProvider
 	}
 
 	@Override
-	public void browserActivated(@NotNull HierarchyBrowser hierarchyBrowser)
+	public void browserActivated(@Nonnull HierarchyBrowser hierarchyBrowser)
 	{
 		delegate.browserActivated(hierarchyBrowser);
 	}

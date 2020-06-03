@@ -1,7 +1,8 @@
 package net.ishchenko.idea.minibatis.inspections.mapper;
 
+import javax.annotation.Nonnull;
+
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.codeInspection.BaseJavaLocalInspectionTool;
 
 /**
@@ -14,14 +15,14 @@ public abstract class MyBatisInspection extends BaseJavaLocalInspectionTool
 {
 
 	@Nls
-	@NotNull
+	@Nonnull
 	@Override
 	public String getGroupDisplayName()
 	{
 		return "iBATIS/MyBatis issues";
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public String getShortName()
 	{

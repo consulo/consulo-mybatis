@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.annotation.Nonnull;
+
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.psi.PsiElementResolveResult;
 import com.intellij.psi.PsiLiteral;
@@ -31,7 +32,7 @@ public class SqlMapReference extends PsiPolyVariantReferenceBase<PsiLiteral>
 		super(expression);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public ResolveResult[] multiResolve(boolean b)
 	{
@@ -78,7 +79,7 @@ public class SqlMapReference extends PsiPolyVariantReferenceBase<PsiLiteral>
 
 	}
 
-	@NotNull
+	@Nonnull
 	public Object[] getVariants()
 	{
 
