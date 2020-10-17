@@ -9,7 +9,7 @@
 	<extensions defaultExtensionNs="com.intellij">
 		<moduleExtensionProvider key="mybatis"
 								 parentKey="java"
-								 icon="/consulo/mybatis/icons/mybatis.png"
+								 icon="consulo.mybatis.MyBatisIconGroup@mybatis"
 								 name="iBatis/MyBatis"
 								 immutableClass="consulo.mybatis.module.extension.MyBatisModuleExtension"
 								 mutableClass="consulo.mybatis.module.extension.MyBatisMutableModuleExtension"/>
