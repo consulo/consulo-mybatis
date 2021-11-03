@@ -5,6 +5,9 @@
 	<vendor>Max Ishchenko</vendor>
 	<depends>consulo.java</depends>
 	<depends>com.intellij.xml</depends>
+	<tags>
+		<tag>language.extension</tag>
+	</tags>
 
 	<extensions defaultExtensionNs="com.intellij">
 		<moduleExtensionProvider key="mybatis"
