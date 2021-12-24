@@ -1,4 +1,4 @@
-<consulo-plugin>
+<consulo-plugin url="https://github.com/consulo/consulo-mybatis">
 	<id>consulo.mybatis</id>
 	<name>iBATIS/MyBatis</name>
 	<version>SNAPSHOT</version>
