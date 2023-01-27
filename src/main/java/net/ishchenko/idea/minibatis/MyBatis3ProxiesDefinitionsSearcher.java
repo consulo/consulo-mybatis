@@ -1,15 +1,17 @@
 package net.ishchenko.idea.minibatis;
 
-import javax.annotation.Nonnull;
+import com.intellij.java.language.psi.PsiClass;
+import com.intellij.java.language.psi.PsiMethod;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.application.ReadAction;
+import consulo.application.util.function.Processor;
+import consulo.ide.ServiceManager;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.search.DefinitionsScopedSearch;
+import consulo.language.psi.search.DefinitionsScopedSearchExecutor;
+import consulo.xml.util.xml.DomElement;
 
-import com.intellij.openapi.application.QueryExecutorBase;
-import com.intellij.openapi.components.ServiceManager;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiMethod;
-import com.intellij.psi.xml.XmlElement;
-import com.intellij.util.Processor;
-import com.intellij.util.xml.DomElement;
+import javax.annotation.Nonnull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,28 +19,28 @@ import com.intellij.util.xml.DomElement;
  * Date: 04.01.12
  * Time: 22:16
  */
-public class MyBatis3ProxiesDefinitionsSearcher extends QueryExecutorBase<XmlElement, PsiElement>
+@ExtensionImpl
+public class MyBatis3ProxiesDefinitionsSearcher implements DefinitionsScopedSearchExecutor
 {
 	@Override
-	public void processQuery(@Nonnull PsiElement element, @Nonnull final Processor<? super XmlElement> consumer)
+	public boolean execute(@Nonnull DefinitionsScopedSearch.SearchParameters searchParameters, @Nonnull Processor<? super PsiElement> consumer)
 	{
-		DomFileElementsFinder finder = ServiceManager.getService(element.getProject(), DomFileElementsFinder.class);
-		Processor<DomElement> processor = new Processor<DomElement>()
+		ReadAction.run(() ->
 		{
-			@Override
-			public boolean process(DomElement domElement)
-			{
-				return consumer.process(domElement.getXmlElement());
-			}
-		};
+			PsiElement element = searchParameters.getElement();
 
-		if(element instanceof PsiClass)
-		{
-			finder.processMappers((PsiClass) element, processor);
-		}
-		else if(element instanceof PsiMethod)
-		{
-			finder.processMapperStatements((PsiMethod) element, processor);
-		}
+			DomFileElementsFinder finder = ServiceManager.getService(element.getProject(), DomFileElementsFinder.class);
+			Processor<DomElement> processor = domElement -> consumer.process(domElement.getXmlElement());
+
+			if(element instanceof PsiClass)
+			{
+				finder.processMappers((PsiClass) element, processor);
+			}
+			else if(element instanceof PsiMethod)
+			{
+				finder.processMapperStatements((PsiMethod) element, processor);
+			}
+		});
+		return true;
 	}
 }

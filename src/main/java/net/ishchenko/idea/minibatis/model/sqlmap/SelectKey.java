@@ -1,8 +1,8 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
-import com.intellij.util.xml.Attribute;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.GenericAttributeValue;
+import consulo.xml.util.xml.Attribute;
+import consulo.xml.util.xml.DomElement;
+import consulo.xml.util.xml.GenericAttributeValue;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,8 +12,6 @@ import com.intellij.util.xml.GenericAttributeValue;
  */
 public interface SelectKey extends DomElement
 {
-
 	@Attribute("resultClass")
 	GenericAttributeValue<TypeAlias> getResultClass();
-
 }

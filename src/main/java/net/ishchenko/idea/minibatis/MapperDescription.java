@@ -1,8 +1,8 @@
 package net.ishchenko.idea.minibatis;
 
+import consulo.annotation.component.ExtensionImpl;
+import consulo.xml.util.xml.DomFileDescription;
 import net.ishchenko.idea.minibatis.model.mapper.Mapper;
-
-import com.intellij.util.xml.DomFileDescription;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,6 +10,7 @@ import com.intellij.util.xml.DomFileDescription;
  * Date: 01.01.12
  * Time: 18:38
  */
+@ExtensionImpl
 public class MapperDescription extends DomFileDescription<Mapper>
 {
 	public MapperDescription()

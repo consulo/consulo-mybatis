@@ -1,14 +1,15 @@
 package consulo.mybatis.module.extension;
 
+import consulo.module.content.layer.ModuleRootLayer;
+import consulo.module.content.layer.extension.ModuleExtensionBase;
+
 import javax.annotation.Nonnull;
-import consulo.module.extension.impl.ModuleExtensionImpl;
-import consulo.roots.ModuleRootLayer;
 
 /**
  * @author VISTALL
  * @since 19:52/27.06.13
  */
-public class MyBatisModuleExtension extends ModuleExtensionImpl<MyBatisModuleExtension>
+public class MyBatisModuleExtension extends ModuleExtensionBase<MyBatisModuleExtension>
 {
 	public MyBatisModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{

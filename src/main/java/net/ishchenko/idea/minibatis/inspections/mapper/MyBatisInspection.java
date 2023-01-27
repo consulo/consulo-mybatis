@@ -1,9 +1,12 @@
 package net.ishchenko.idea.minibatis.inspections.mapper;
 
-import javax.annotation.Nonnull;
-
+import com.intellij.java.analysis.impl.codeInspection.BaseJavaLocalInspectionTool;
+import com.intellij.java.language.JavaLanguage;
+import consulo.language.Language;
 import org.jetbrains.annotations.Nls;
-import com.intellij.codeInspection.BaseJavaLocalInspectionTool;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,6 +16,12 @@ import com.intellij.codeInspection.BaseJavaLocalInspectionTool;
  */
 public abstract class MyBatisInspection extends BaseJavaLocalInspectionTool
 {
+	@Nullable
+	@Override
+	public Language getLanguage()
+	{
+		return JavaLanguage.INSTANCE;
+	}
 
 	@Nls
 	@Nonnull
@@ -28,5 +37,4 @@ public abstract class MyBatisInspection extends BaseJavaLocalInspectionTool
 	{
 		return this.getClass().getName();
 	}
-
 }

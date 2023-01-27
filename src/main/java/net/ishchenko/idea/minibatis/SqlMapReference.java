@@ -1,22 +1,20 @@
 package net.ishchenko.idea.minibatis;
 
+import com.intellij.java.language.psi.PsiLiteral;
+import consulo.application.util.function.CommonProcessors;
+import consulo.ide.ServiceManager;
+import consulo.language.impl.psi.PomTargetPsiElementImpl;
+import consulo.language.psi.PsiElementResolveResult;
+import consulo.language.psi.PsiPolyVariantReferenceBase;
+import consulo.language.psi.ResolveResult;
+import consulo.xml.psi.xml.XmlElement;
+import consulo.xml.util.xml.DomTarget;
+import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
+
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import javax.annotation.Nonnull;
-
-import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
-
-import com.intellij.openapi.components.ServiceManager;
-import com.intellij.psi.PsiElementResolveResult;
-import com.intellij.psi.PsiLiteral;
-import com.intellij.psi.PsiPolyVariantReferenceBase;
-import com.intellij.psi.ResolveResult;
-import com.intellij.psi.impl.PomTargetPsiElementImpl;
-import com.intellij.psi.xml.XmlElement;
-import com.intellij.util.CommonProcessors;
-import com.intellij.util.xml.DomTarget;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,7 +24,6 @@ import com.intellij.util.xml.DomTarget;
  */
 public class SqlMapReference extends PsiPolyVariantReferenceBase<PsiLiteral>
 {
-
 	public SqlMapReference(PsiLiteral expression)
 	{
 		super(expression);

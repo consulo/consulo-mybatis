@@ -1,25 +1,28 @@
 package net.ishchenko.idea.minibatis;
 
-import java.awt.event.MouseEvent;
+import com.intellij.java.language.JavaLanguage;
+import com.intellij.java.language.psi.PsiClass;
+import com.intellij.java.language.psi.PsiIdentifier;
+import com.intellij.java.language.psi.PsiMethod;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.application.AllIcons;
+import consulo.application.util.function.CommonProcessors;
+import consulo.codeEditor.markup.GutterIconRenderer;
+import consulo.ide.ServiceManager;
+import consulo.language.Language;
+import consulo.language.editor.Pass;
+import consulo.language.editor.gutter.GutterIconNavigationHandler;
+import consulo.language.editor.gutter.LineMarkerInfo;
+import consulo.language.editor.gutter.LineMarkerProvider;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiNameIdentifierOwner;
+import consulo.navigation.Navigatable;
+import consulo.xml.psi.xml.XmlElement;
+import consulo.xml.util.xml.DomElement;
 
-import com.intellij.codeHighlighting.Pass;
-import com.intellij.codeInsight.daemon.GutterIconNavigationHandler;
-import com.intellij.codeInsight.daemon.LineMarkerInfo;
-import com.intellij.codeInsight.daemon.LineMarkerProvider;
-import com.intellij.icons.AllIcons;
-import com.intellij.openapi.components.ServiceManager;
-import com.intellij.openapi.editor.markup.GutterIconRenderer;
-import com.intellij.pom.Navigatable;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiIdentifier;
-import com.intellij.psi.PsiMethod;
-import com.intellij.psi.PsiNameIdentifierOwner;
-import com.intellij.psi.xml.XmlElement;
-import com.intellij.util.CommonProcessors;
-import com.intellij.util.Function;
-import com.intellij.util.NullableFunction;
-import com.intellij.util.xml.DomElement;
+import javax.annotation.Nonnull;
+import java.awt.event.MouseEvent;
+import java.util.function.Function;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,6 +30,7 @@ import com.intellij.util.xml.DomElement;
  * Date: 01.01.12
  * Time: 15:45
  */
+@ExtensionImpl
 public class MyBatis3ProxiesLineMarkerProvider implements LineMarkerProvider
 {
 	@Override
@@ -63,10 +67,10 @@ public class MyBatis3ProxiesLineMarkerProvider implements LineMarkerProvider
 	private Function<PsiIdentifier, String> getTooltipProvider(final DomElement element)
 	{
 
-		return new NullableFunction<PsiIdentifier, String>()
+		return new Function<PsiIdentifier, String>()
 		{
 			@Override
-			public String fun(PsiIdentifier psiIdentifier)
+			public String apply(PsiIdentifier psiIdentifier)
 			{
 				XmlElement xmlElement = element.getXmlElement();
 				if(xmlElement != null)
@@ -101,4 +105,10 @@ public class MyBatis3ProxiesLineMarkerProvider implements LineMarkerProvider
 		};
 	}
 
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return JavaLanguage.INSTANCE;
+	}
 }

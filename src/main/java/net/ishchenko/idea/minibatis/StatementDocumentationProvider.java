@@ -1,18 +1,19 @@
 package net.ishchenko.idea.minibatis;
 
-import java.util.List;
-import java.util.regex.Pattern;
-
+import com.intellij.java.language.JavaLanguage;
+import com.intellij.java.language.psi.PsiJavaToken;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.application.util.function.CommonProcessors;
+import consulo.ide.ServiceManager;
+import consulo.language.Language;
+import consulo.language.editor.documentation.LanguageDocumentationProvider;
+import consulo.language.psi.PsiElement;
+import consulo.util.lang.StringUtil;
+import consulo.xml.psi.xml.XmlElement;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import com.intellij.lang.documentation.DocumentationProvider;
-import com.intellij.openapi.components.ServiceManager;
-import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiJavaToken;
-import com.intellij.psi.PsiManager;
-import com.intellij.psi.xml.XmlElement;
-import com.intellij.util.CommonProcessors;
+import javax.annotation.Nonnull;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,22 +21,10 @@ import com.intellij.util.CommonProcessors;
  * Date: 01.02.12
  * Time: 22:01
  */
-public class StatementDocumentationProvider implements DocumentationProvider
+@ExtensionImpl
+public class StatementDocumentationProvider implements LanguageDocumentationProvider
 {
-
 	private static final Pattern dotPattern = Pattern.compile("\\.");
-
-	@Override
-	public String getQuickNavigateInfo(PsiElement element, PsiElement originalElement)
-	{
-		return null;
-	}
-
-	@Override
-	public List<String> getUrlFor(PsiElement element, PsiElement originalElement)
-	{
-		return null;
-	}
 
 	@Override
 	public String generateDoc(PsiElement element, PsiElement originalElement)
@@ -80,16 +69,10 @@ public class StatementDocumentationProvider implements DocumentationProvider
 		return null;
 	}
 
+	@Nonnull
 	@Override
-	public PsiElement getDocumentationElementForLookupItem(PsiManager psiManager, Object object, PsiElement element)
+	public Language getLanguage()
 	{
-		return null;
+		return JavaLanguage.INSTANCE;
 	}
-
-	@Override
-	public PsiElement getDocumentationElementForLink(PsiManager psiManager, String link, PsiElement context)
-	{
-		return null;
-	}
-
 }

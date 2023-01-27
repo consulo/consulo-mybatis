@@ -1,29 +1,24 @@
 package net.ishchenko.idea.minibatis;
 
+import com.intellij.java.language.impl.psi.impl.JavaConstantExpressionEvaluator;
+import com.intellij.java.language.psi.PsiExpression;
+import com.intellij.java.language.psi.PsiLiteral;
+import com.intellij.java.language.psi.PsiPolyadicExpression;
+import com.intellij.java.language.psi.PsiVariable;
+import consulo.application.util.function.CommonProcessors;
+import consulo.ide.ServiceManager;
+import consulo.language.impl.psi.PomTargetPsiElementImpl;
+import consulo.language.psi.*;
+import consulo.language.psi.util.PsiTreeUtil;
+import consulo.xml.psi.xml.XmlElement;
+import consulo.xml.util.xml.DomTarget;
+import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
+
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
-
-import javax.annotation.Nonnull;
-import com.intellij.openapi.components.ServiceManager;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiElementResolveResult;
-import com.intellij.psi.PsiExpression;
-import com.intellij.psi.PsiLiteral;
-import com.intellij.psi.PsiPolyVariantReferenceBase;
-import com.intellij.psi.PsiPolyadicExpression;
-import com.intellij.psi.PsiReference;
-import com.intellij.psi.PsiVariable;
-import com.intellij.psi.ResolveResult;
-import com.intellij.psi.impl.JavaConstantExpressionEvaluator;
-import com.intellij.psi.impl.PomTargetPsiElementImpl;
-import com.intellij.psi.util.PsiTreeUtil;
-import com.intellij.psi.xml.XmlElement;
-import com.intellij.util.CommonProcessors;
-import com.intellij.util.xml.DomTarget;
 
 /**
  * Created by IntelliJ IDEA.

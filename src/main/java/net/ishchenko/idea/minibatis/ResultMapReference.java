@@ -1,17 +1,16 @@
 package net.ishchenko.idea.minibatis;
 
-import java.util.regex.Pattern;
-
+import consulo.application.util.function.CommonProcessors;
+import consulo.ide.ServiceManager;
+import consulo.language.impl.psi.PomTargetPsiElementImpl;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiReferenceBase;
+import consulo.xml.psi.xml.XmlElement;
+import consulo.xml.util.xml.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.ResultMap;
 
 import javax.annotation.Nonnull;
-import com.intellij.openapi.components.ServiceManager;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiReferenceBase;
-import com.intellij.psi.impl.PomTargetPsiElementImpl;
-import com.intellij.psi.xml.XmlElement;
-import com.intellij.util.CommonProcessors;
-import com.intellij.util.xml.DomTarget;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,7 +20,6 @@ import com.intellij.util.xml.DomTarget;
  */
 public class ResultMapReference extends PsiReferenceBase<PsiElement>
 {
-
 	private static final Pattern dotPattern = Pattern.compile("\\.");
 
 	public ResultMapReference(@Nonnull PsiElement element)
@@ -32,7 +30,6 @@ public class ResultMapReference extends PsiReferenceBase<PsiElement>
 	@Override
 	public PsiElement resolve()
 	{
-
 		String rawText = getElement().getText();
 		if(rawText.length() <= 2)
 		{

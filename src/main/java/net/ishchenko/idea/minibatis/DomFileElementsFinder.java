@@ -1,26 +1,29 @@
 package net.ishchenko.idea.minibatis;
 
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
+import com.intellij.java.language.psi.PsiClass;
+import com.intellij.java.language.psi.PsiIdentifier;
+import com.intellij.java.language.psi.PsiMethod;
+import consulo.annotation.component.ComponentScope;
+import consulo.annotation.component.ServiceAPI;
+import consulo.annotation.component.ServiceImpl;
+import consulo.application.Application;
+import consulo.application.util.function.CommonProcessors;
+import consulo.application.util.function.Processor;
+import consulo.language.psi.scope.GlobalSearchScope;
+import consulo.project.Project;
+import consulo.xml.util.xml.DomElement;
+import consulo.xml.util.xml.DomFileElement;
+import consulo.xml.util.xml.DomService;
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 import net.ishchenko.idea.minibatis.model.mapper.Mapper;
 import net.ishchenko.idea.minibatis.model.mapper.MapperIdentifiableStatement;
 import net.ishchenko.idea.minibatis.model.sqlmap.ResultMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiIdentifier;
-import com.intellij.psi.PsiMethod;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.util.CommonProcessors;
-import com.intellij.util.Processor;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.DomFileElement;
-import com.intellij.util.xml.DomService;
+import javax.annotation.Nonnull;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,13 +31,16 @@ import com.intellij.util.xml.DomService;
  * Date: 01.01.12
  * Time: 16:03
  */
+@Singleton
+@ServiceAPI(ComponentScope.PROJECT)
+@ServiceImpl
 public class DomFileElementsFinder
 {
-
 	private final Project project;
 	private final DomService domService;
 	private final Application application;
 
+	@Inject
 	public DomFileElementsFinder(Project project, DomService domService, Application application)
 	{
 		this.project = project;

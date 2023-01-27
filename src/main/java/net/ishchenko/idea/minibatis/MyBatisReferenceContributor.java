@@ -1,15 +1,14 @@
 package net.ishchenko.idea.minibatis;
 
-import javax.annotation.Nonnull;
+import com.intellij.java.language.JavaLanguage;
+import com.intellij.java.language.patterns.PsiJavaPatterns;
+import com.intellij.java.language.psi.PsiLiteral;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.Language;
+import consulo.language.psi.*;
+import consulo.language.util.ProcessingContext;
 
-import com.intellij.patterns.PsiJavaPatterns;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiLiteral;
-import com.intellij.psi.PsiReference;
-import com.intellij.psi.PsiReferenceContributor;
-import com.intellij.psi.PsiReferenceProvider;
-import com.intellij.psi.PsiReferenceRegistrar;
-import com.intellij.util.ProcessingContext;
+import javax.annotation.Nonnull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,9 +16,9 @@ import com.intellij.util.ProcessingContext;
  * Date: 17.12.11
  * Time: 20:36
  */
+@ExtensionImpl
 public class MyBatisReferenceContributor extends PsiReferenceContributor
 {
-
 	@Override
 	public void registerReferenceProviders(PsiReferenceRegistrar registrar)
 	{
@@ -38,5 +37,11 @@ public class MyBatisReferenceContributor extends PsiReferenceContributor
 
 	}
 
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return JavaLanguage.INSTANCE;
+	}
 }
 

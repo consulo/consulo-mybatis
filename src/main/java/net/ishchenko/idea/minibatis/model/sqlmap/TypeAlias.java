@@ -1,10 +1,10 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
-import com.intellij.psi.PsiClass;
-import com.intellij.util.xml.Attribute;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.GenericAttributeValue;
-import com.intellij.util.xml.NameValue;
+import com.intellij.java.language.psi.PsiClass;
+import consulo.xml.util.xml.Attribute;
+import consulo.xml.util.xml.DomElement;
+import consulo.xml.util.xml.GenericAttributeValue;
+import consulo.xml.util.xml.NameValue;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,12 +14,10 @@ import com.intellij.util.xml.NameValue;
  */
 public interface TypeAlias extends DomElement
 {
-
 	@NameValue
 	@Attribute("alias")
 	GenericAttributeValue<String> getAlias();
 
 	@Attribute("type")
 	GenericAttributeValue<PsiClass> getType();
-
 }

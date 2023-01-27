@@ -1,9 +1,9 @@
 package net.ishchenko.idea.minibatis.model.mapper;
 
-import java.util.List;
+import consulo.xml.util.xml.DomElement;
+import consulo.xml.util.xml.SubTagList;
 
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.SubTagList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,8 +13,6 @@ import com.intellij.util.xml.SubTagList;
  */
 public interface WithIncludes extends DomElement
 {
-
 	@SubTagList("include")
 	List<Include> getIncludes();
-
 }

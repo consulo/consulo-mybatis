@@ -1,8 +1,8 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
-import java.util.List;
+import consulo.xml.util.xml.SubTagList;
 
-import com.intellij.util.xml.SubTagList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,8 +12,6 @@ import com.intellij.util.xml.SubTagList;
  */
 public interface Insert extends SqlMapIdentifiableStatement
 {
-
 	@SubTagList("selectKey")
 	List<SelectKey> getSelectKeys();
-
 }

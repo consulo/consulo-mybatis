@@ -1,9 +1,9 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
-import com.intellij.util.xml.Attribute;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.GenericAttributeValue;
-import com.intellij.util.xml.NameValue;
+import consulo.xml.util.xml.Attribute;
+import consulo.xml.util.xml.DomElement;
+import consulo.xml.util.xml.GenericAttributeValue;
+import consulo.xml.util.xml.NameValue;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,5 +17,4 @@ public interface Include extends DomElement
 	@NameValue
 	@Attribute("refid")
 	GenericAttributeValue<SqlMapIdentifiableStatement> getRefid();
-
 }

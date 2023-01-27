@@ -1,19 +1,11 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
-import javax.annotation.Nonnull;
-
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiReference;
+import consulo.xml.util.xml.*;
 import net.ishchenko.idea.minibatis.ResultMapReference;
 
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiReference;
-import com.intellij.util.xml.Attribute;
-import com.intellij.util.xml.ConvertContext;
-import com.intellij.util.xml.CustomReferenceConverter;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.GenericAttributeValue;
-import com.intellij.util.xml.GenericDomValue;
-import com.intellij.util.xml.NameValue;
-import com.intellij.util.xml.Referencing;
+import javax.annotation.Nonnull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,7 +15,6 @@ import com.intellij.util.xml.Referencing;
  */
 public interface Result extends DomElement
 {
-
 	@NameValue
 	@Attribute("property")
 	GenericAttributeValue<String> getProperty();

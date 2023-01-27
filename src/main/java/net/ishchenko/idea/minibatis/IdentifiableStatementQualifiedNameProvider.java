@@ -1,18 +1,18 @@
 package net.ishchenko.idea.minibatis;
 
-import javax.annotation.Nullable;
-
+import consulo.annotation.component.ExtensionImpl;
+import consulo.codeEditor.Editor;
+import consulo.language.editor.QualifiedNameProvider;
+import consulo.language.pom.PomTarget;
+import consulo.language.pom.PomTargetPsiElement;
+import consulo.language.psi.PsiElement;
+import consulo.project.Project;
+import consulo.xml.util.xml.DomElement;
+import consulo.xml.util.xml.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import com.intellij.ide.actions.QualifiedNameProvider;
-import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.project.Project;
-import com.intellij.pom.PomTarget;
-import com.intellij.pom.PomTargetPsiElement;
-import com.intellij.psi.PsiElement;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.DomTarget;
+import javax.annotation.Nullable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,6 +20,7 @@ import com.intellij.util.xml.DomTarget;
  * Date: 30.04.13
  * Time: 0:06
  */
+@ExtensionImpl
 public class IdentifiableStatementQualifiedNameProvider implements QualifiedNameProvider
 {
 	@Nullable

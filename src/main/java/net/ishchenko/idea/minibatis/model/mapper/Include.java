@@ -1,8 +1,9 @@
 package net.ishchenko.idea.minibatis.model.mapper;
 
-import com.intellij.util.xml.Attribute;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.GenericAttributeValue;
+
+import consulo.xml.util.xml.Attribute;
+import consulo.xml.util.xml.DomElement;
+import consulo.xml.util.xml.GenericAttributeValue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,8 +13,6 @@ import com.intellij.util.xml.GenericAttributeValue;
  */
 public interface Include extends DomElement
 {
-
 	@Attribute("refid")
 	GenericAttributeValue<MapperIdentifiableStatement> getRefid();
-
 }

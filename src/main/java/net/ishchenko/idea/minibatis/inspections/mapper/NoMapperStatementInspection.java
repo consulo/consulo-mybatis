@@ -1,29 +1,28 @@
 package net.ishchenko.idea.minibatis.inspections.mapper;
 
-import javax.annotation.Nonnull;
-
+import com.intellij.java.language.psi.PsiAnnotation;
+import com.intellij.java.language.psi.PsiClass;
+import com.intellij.java.language.psi.PsiIdentifier;
+import com.intellij.java.language.psi.PsiMethod;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.ide.ServiceManager;
+import consulo.language.editor.inspection.LocalQuickFix;
+import consulo.language.editor.inspection.ProblemDescriptor;
+import consulo.language.editor.inspection.ProblemHighlightType;
+import consulo.language.editor.inspection.scheme.InspectionManager;
 import net.ishchenko.idea.minibatis.DomFileElementsFinder;
-
 import org.jetbrains.annotations.Nls;
-import com.intellij.codeInspection.InspectionManager;
-import com.intellij.codeInspection.LocalQuickFix;
-import com.intellij.codeInspection.ProblemDescriptor;
-import com.intellij.codeInspection.ProblemHighlightType;
-import com.intellij.openapi.components.ServiceManager;
-import com.intellij.psi.PsiAnnotation;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiIdentifier;
-import com.intellij.psi.PsiMethod;
 
+import javax.annotation.Nonnull;
 /**
  * Created by IntelliJ IDEA.
  * User: Max
  * Date: 02.06.12
  * Time: 11:39
  */
+@ExtensionImpl
 public class NoMapperStatementInspection extends MyBatisInspection
 {
-
 	@Override
 	public ProblemDescriptor[] checkMethod(@Nonnull PsiMethod method, @Nonnull InspectionManager manager, boolean isOnTheFly)
 	{

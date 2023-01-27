@@ -1,12 +1,8 @@
 package net.ishchenko.idea.minibatis.model.mapper;
 
-import java.util.List;
+import consulo.xml.util.xml.*;
 
-import com.intellij.util.xml.Attribute;
-import com.intellij.util.xml.DomElement;
-import com.intellij.util.xml.GenericAttributeValue;
-import com.intellij.util.xml.SubTagList;
-import com.intellij.util.xml.SubTagsList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,7 +13,6 @@ import com.intellij.util.xml.SubTagsList;
 
 public interface Mapper extends DomElement
 {
-
 	@Attribute("namespace")
 	GenericAttributeValue<String> getNamespace();
 
@@ -47,6 +42,4 @@ public interface Mapper extends DomElement
 
 	@SubTagList("delete")
 	List<Delete> getDeletes();
-
-
 }

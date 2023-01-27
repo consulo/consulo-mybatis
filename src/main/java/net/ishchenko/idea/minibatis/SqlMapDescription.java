@@ -1,8 +1,8 @@
 package net.ishchenko.idea.minibatis;
 
+import consulo.annotation.component.ExtensionImpl;
+import consulo.xml.util.xml.DomFileDescription;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
-
-import com.intellij.util.xml.DomFileDescription;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,6 +10,7 @@ import com.intellij.util.xml.DomFileDescription;
  * Date: 24.12.11
  * Time: 0:00
  */
+@ExtensionImpl
 public class SqlMapDescription extends DomFileDescription<SqlMap>
 {
 
