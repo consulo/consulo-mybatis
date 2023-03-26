@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 public class NoMapperStatementInspection extends MyBatisInspection
 {
 	@Override
-	public ProblemDescriptor[] checkMethod(@Nonnull PsiMethod method, @Nonnull InspectionManager manager, boolean isOnTheFly)
+	public ProblemDescriptor[] checkMethod(@Nonnull PsiMethod method, @Nonnull InspectionManager manager, boolean isOnTheFly, Object state)
 	{
 		PsiClass containingClass = method.getContainingClass();
 		if(containingClass != null && containingClass.isInterface())
