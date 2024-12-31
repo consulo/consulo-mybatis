@@ -20,7 +20,7 @@ import consulo.navigation.Navigatable;
 import consulo.xml.psi.xml.XmlElement;
 import consulo.xml.util.xml.DomElement;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.awt.event.MouseEvent;
 import java.util.function.Function;
 

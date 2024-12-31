@@ -5,7 +5,7 @@ import consulo.language.psi.PsiReference;
 import consulo.xml.util.xml.*;
 import net.ishchenko.idea.minibatis.ResultMapReference;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * Created by IntelliJ IDEA.

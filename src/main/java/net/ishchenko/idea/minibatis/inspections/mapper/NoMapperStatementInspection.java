@@ -13,7 +13,7 @@ import consulo.language.editor.inspection.scheme.InspectionManager;
 import net.ishchenko.idea.minibatis.DomFileElementsFinder;
 import org.jetbrains.annotations.Nls;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 /**
  * Created by IntelliJ IDEA.
  * User: Max

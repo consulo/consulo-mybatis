@@ -11,7 +11,7 @@ import consulo.xml.psi.xml.XmlElement;
 import consulo.xml.util.xml.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

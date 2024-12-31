@@ -12,7 +12,7 @@ import consulo.xml.util.xml.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 
 /**
  * Created with IntelliJ IDEA.

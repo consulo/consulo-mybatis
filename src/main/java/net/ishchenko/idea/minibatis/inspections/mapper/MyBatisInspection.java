@@ -5,8 +5,8 @@ import com.intellij.java.language.JavaLanguage;
 import consulo.language.Language;
 import org.jetbrains.annotations.Nls;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
  * Created by IntelliJ IDEA.

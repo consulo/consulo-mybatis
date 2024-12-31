@@ -22,7 +22,7 @@ import net.ishchenko.idea.minibatis.model.sqlmap.ResultMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.util.List;
 
 /**

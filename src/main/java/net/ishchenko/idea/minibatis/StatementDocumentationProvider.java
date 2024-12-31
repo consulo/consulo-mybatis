@@ -12,7 +12,7 @@ import consulo.util.lang.StringUtil;
 import consulo.xml.psi.xml.XmlElement;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.util.regex.Pattern;
 
 /**
