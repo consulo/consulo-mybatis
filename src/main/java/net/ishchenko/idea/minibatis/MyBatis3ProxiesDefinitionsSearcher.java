@@ -10,8 +10,9 @@ import consulo.language.psi.PsiElement;
 import consulo.language.psi.search.DefinitionsScopedSearch;
 import consulo.language.psi.search.DefinitionsScopedSearchExecutor;
 import consulo.xml.util.xml.DomElement;
-
 import jakarta.annotation.Nonnull;
+
+import java.util.function.Predicate;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,27 +21,23 @@ import jakarta.annotation.Nonnull;
  * Time: 22:16
  */
 @ExtensionImpl
-public class MyBatis3ProxiesDefinitionsSearcher implements DefinitionsScopedSearchExecutor
-{
-	@Override
-	public boolean execute(@Nonnull DefinitionsScopedSearch.SearchParameters searchParameters, @Nonnull Processor<? super PsiElement> consumer)
-	{
-		ReadAction.run(() ->
-		{
-			PsiElement element = searchParameters.getElement();
+public class MyBatis3ProxiesDefinitionsSearcher implements DefinitionsScopedSearchExecutor {
+    @Override
+    public boolean execute(@Nonnull DefinitionsScopedSearch.SearchParameters searchParameters, @Nonnull Predicate<? super PsiElement> consumer) {
+        ReadAction.run(() ->
+        {
+            PsiElement element = searchParameters.getElement();
 
-			DomFileElementsFinder finder = ServiceManager.getService(element.getProject(), DomFileElementsFinder.class);
-			Processor<DomElement> processor = domElement -> consumer.process(domElement.getXmlElement());
+            DomFileElementsFinder finder = element.getProject().getInstance(DomFileElementsFinder.class);
+            Processor<DomElement> processor = domElement -> consumer.test(domElement.getXmlElement());
 
-			if(element instanceof PsiClass)
-			{
-				finder.processMappers((PsiClass) element, processor);
-			}
-			else if(element instanceof PsiMethod)
-			{
-				finder.processMapperStatements((PsiMethod) element, processor);
-			}
-		});
-		return true;
-	}
+            if (element instanceof PsiClass) {
+                finder.processMappers((PsiClass) element, processor);
+            }
+            else if (element instanceof PsiMethod) {
+                finder.processMapperStatements((PsiMethod) element, processor);
+            }
+        });
+        return true;
+    }
 }
