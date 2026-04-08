@@ -20,7 +20,7 @@ import consulo.language.psi.search.ReferencesSearch;
 import consulo.language.psi.util.PsiTreeUtil;
 import consulo.navigation.NavigationItem;
 import consulo.project.Project;
-import consulo.xml.lang.xml.XMLLanguage;
+import consulo.xml.language.XMLLanguage;
 import consulo.xml.util.xml.DomElement;
 import consulo.xml.util.xml.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;

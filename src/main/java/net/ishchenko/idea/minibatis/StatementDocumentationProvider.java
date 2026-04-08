@@ -9,7 +9,7 @@ import consulo.language.Language;
 import consulo.language.editor.documentation.LanguageDocumentationProvider;
 import consulo.language.psi.PsiElement;
 import consulo.util.lang.StringUtil;
-import consulo.xml.psi.xml.XmlElement;
+import consulo.xml.language.psi.XmlElement;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
 import jakarta.annotation.Nonnull;

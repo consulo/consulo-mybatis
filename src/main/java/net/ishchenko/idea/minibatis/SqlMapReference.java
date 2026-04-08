@@ -7,7 +7,7 @@ import consulo.language.impl.psi.PomTargetPsiElementImpl;
 import consulo.language.psi.PsiElementResolveResult;
 import consulo.language.psi.PsiPolyVariantReferenceBase;
 import consulo.language.psi.ResolveResult;
-import consulo.xml.psi.xml.XmlElement;
+import consulo.xml.language.psi.XmlElement;
 import consulo.xml.util.xml.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 

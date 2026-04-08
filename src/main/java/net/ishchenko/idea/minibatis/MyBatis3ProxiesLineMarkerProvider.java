@@ -17,7 +17,7 @@ import consulo.language.editor.gutter.LineMarkerProvider;
 import consulo.language.psi.PsiElement;
 import consulo.language.psi.PsiNameIdentifierOwner;
 import consulo.navigation.Navigatable;
-import consulo.xml.psi.xml.XmlElement;
+import consulo.xml.language.psi.XmlElement;
 import consulo.xml.util.xml.DomElement;
 
 import jakarta.annotation.Nonnull;
