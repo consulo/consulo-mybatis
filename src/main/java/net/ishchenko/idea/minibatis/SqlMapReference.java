@@ -8,7 +8,8 @@ import consulo.language.psi.PsiElementResolveResult;
 import consulo.language.psi.PsiPolyVariantReferenceBase;
 import consulo.language.psi.ResolveResult;
 import consulo.xml.language.psi.XmlElement;
-import consulo.xml.util.xml.DomTarget;
+import consulo.xml.dom.DomService;
+import consulo.xml.dom.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 
 import jakarta.annotation.Nonnull;
@@ -57,7 +58,7 @@ public class SqlMapReference extends PsiPolyVariantReferenceBase<PsiLiteral>
 		final SqlMap[] sqlMaps = processorResults.toArray(new SqlMap[processorResults.size()]);
 		for(SqlMap sqlMap : sqlMaps)
 		{
-			DomTarget target = DomTarget.getTarget(sqlMap);
+			DomTarget target = DomService.getInstance().getTarget(sqlMap);
 			if(target != null)
 			{
 				XmlElement xmlElement = sqlMap.getXmlElement();

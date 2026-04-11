@@ -6,7 +6,8 @@ import consulo.language.impl.psi.PomTargetPsiElementImpl;
 import consulo.language.psi.PsiElement;
 import consulo.language.psi.PsiReferenceBase;
 import consulo.xml.language.psi.XmlElement;
-import consulo.xml.util.xml.DomTarget;
+import consulo.xml.dom.DomService;
+import consulo.xml.dom.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.ResultMap;
 
 import jakarta.annotation.Nonnull;
@@ -57,7 +58,7 @@ public class ResultMapReference extends PsiReferenceBase<PsiElement>
 		ResultMap foundValue = processor.getFoundValue();
 		if(foundValue != null)
 		{
-			DomTarget target = DomTarget.getTarget(foundValue);
+			DomTarget target = DomService.getInstance().getTarget(foundValue);
 			if(target != null)
 			{
 				XmlElement xmlElement = foundValue.getXmlElement();

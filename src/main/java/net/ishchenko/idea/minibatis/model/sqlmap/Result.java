@@ -2,7 +2,7 @@ package net.ishchenko.idea.minibatis.model.sqlmap;
 
 import consulo.language.psi.PsiElement;
 import consulo.language.psi.PsiReference;
-import consulo.xml.util.xml.*;
+import consulo.xml.dom.*;
 import net.ishchenko.idea.minibatis.ResultMapReference;
 
 import jakarta.annotation.Nonnull;

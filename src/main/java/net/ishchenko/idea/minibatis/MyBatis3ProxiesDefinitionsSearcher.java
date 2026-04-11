@@ -9,7 +9,7 @@ import consulo.ide.ServiceManager;
 import consulo.language.psi.PsiElement;
 import consulo.language.psi.search.DefinitionsScopedSearch;
 import consulo.language.psi.search.DefinitionsScopedSearchExecutor;
-import consulo.xml.util.xml.DomElement;
+import consulo.xml.dom.DomElement;
 import jakarta.annotation.Nonnull;
 
 import java.util.function.Predicate;

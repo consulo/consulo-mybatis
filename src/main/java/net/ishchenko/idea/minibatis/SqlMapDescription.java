@@ -1,7 +1,7 @@
 package net.ishchenko.idea.minibatis;
 
 import consulo.annotation.component.ExtensionImpl;
-import consulo.xml.util.xml.DomFileDescription;
+import consulo.xml.dom.DomFileDescription;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 
 /**
@@ -13,10 +13,8 @@ import net.ishchenko.idea.minibatis.model.sqlmap.SqlMap;
 @ExtensionImpl
 public class SqlMapDescription extends DomFileDescription<SqlMap>
 {
-
 	public SqlMapDescription()
 	{
 		super(SqlMap.class, "sqlMap");
 	}
-
 }

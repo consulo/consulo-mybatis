@@ -21,8 +21,8 @@ import consulo.language.psi.util.PsiTreeUtil;
 import consulo.navigation.NavigationItem;
 import consulo.project.Project;
 import consulo.xml.language.XMLLanguage;
-import consulo.xml.util.xml.DomElement;
-import consulo.xml.util.xml.DomTarget;
+import consulo.xml.dom.DomElement;
+import consulo.xml.dom.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
 import jakarta.annotation.Nonnull;

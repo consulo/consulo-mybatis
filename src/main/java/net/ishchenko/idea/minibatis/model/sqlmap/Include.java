@@ -1,9 +1,9 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
-import consulo.xml.util.xml.Attribute;
-import consulo.xml.util.xml.DomElement;
-import consulo.xml.util.xml.GenericAttributeValue;
-import consulo.xml.util.xml.NameValue;
+import consulo.xml.dom.Attribute;
+import consulo.xml.dom.DomElement;
+import consulo.xml.dom.GenericAttributeValue;
+import consulo.xml.dom.NameValue;
 
 /**
  * Created by IntelliJ IDEA.

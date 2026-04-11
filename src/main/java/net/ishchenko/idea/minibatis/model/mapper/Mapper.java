@@ -1,6 +1,6 @@
 package net.ishchenko.idea.minibatis.model.mapper;
 
-import consulo.xml.util.xml.*;
+import consulo.xml.dom.*;
 
 import java.util.List;
 

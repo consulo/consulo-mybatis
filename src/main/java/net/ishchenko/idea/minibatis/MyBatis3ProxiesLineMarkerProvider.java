@@ -18,7 +18,7 @@ import consulo.language.psi.PsiElement;
 import consulo.language.psi.PsiNameIdentifierOwner;
 import consulo.navigation.Navigatable;
 import consulo.xml.language.psi.XmlElement;
-import consulo.xml.util.xml.DomElement;
+import consulo.xml.dom.DomElement;
 
 import jakarta.annotation.Nonnull;
 import java.awt.event.MouseEvent;

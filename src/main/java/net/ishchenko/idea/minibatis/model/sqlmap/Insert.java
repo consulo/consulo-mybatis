@@ -1,6 +1,6 @@
 package net.ishchenko.idea.minibatis.model.sqlmap;
 
-import consulo.xml.util.xml.SubTagList;
+import consulo.xml.dom.SubTagList;
 
 import java.util.List;
 

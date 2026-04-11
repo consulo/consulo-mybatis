@@ -11,7 +11,8 @@ import consulo.language.impl.psi.PomTargetPsiElementImpl;
 import consulo.language.psi.*;
 import consulo.language.psi.util.PsiTreeUtil;
 import consulo.xml.language.psi.XmlElement;
-import consulo.xml.util.xml.DomTarget;
+import consulo.xml.dom.DomService;
+import consulo.xml.dom.DomTarget;
 import net.ishchenko.idea.minibatis.model.sqlmap.SqlMapIdentifiableStatement;
 
 import jakarta.annotation.Nonnull;
@@ -135,7 +136,7 @@ public class IdentifiableStatementReference extends PsiPolyVariantReferenceBase<
 		final SqlMapIdentifiableStatement[] statements = processorResults.toArray(new SqlMapIdentifiableStatement[processorResults.size()]);
 		for(SqlMapIdentifiableStatement statement : statements)
 		{
-			DomTarget target = DomTarget.getTarget(statement);
+			DomTarget target = DomService.getInstance().getTarget(statement);
 			if(target != null)
 			{
 				XmlElement xmlElement = statement.getXmlElement();
